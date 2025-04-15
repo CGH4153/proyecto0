@@ -1,0 +1,44 @@
+.clickable {
+    cursor: pointer;
+}
+
+div.title-block {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #eeeeee;
+}
+
+.dept-group {
+    font-size: 150%;
+}
+
+.dept-group .badge {
+    margin-left: 5px;
+}
+
+#title {
+    font-size: 300%;
+    text-decoration: none;
+    color: #444444;
+    font-family: sans-serif;
+    margin-bottom: 0;
+}
+
+#subtitle {
+    font-size: 120%;
+    font-style: italic;
+    color: #555555;
+    font-family: monospace;
+    color: #222222;
+}
+
+footer {
+    background-color: #eee;
+}
+
+span.footer-text {
+    margin-left: 1%;
+    margin-bottom: 2%;
+    font-style: italic;
+}

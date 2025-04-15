@@ -1,0 +1,157 @@
+
+### This is an auto-generated test suite, it needs to be completed with valid data.
+### These are not all tests you need, more of them should be created to evaluate the functional
+### requirements of your project. These tests only test the CRUD endpoints of the entity.
+### Silence is a DEAL research team project, more info about us in https://deal.us.es
+@BASE = http://127.0.0.1:8080/api/v1
+
+### Auxiliary query
+### Positive test
+### Test 00: Get all existing employees
+### This query is used in several of the below tests it should be executed first.
+# @name employees
+GET {{BASE}}/employees
+
+### Login a(n) employees and save the generated token 
+### This token is used in several of the below tests it should be executed second.
+# @name login
+POST {{BASE}}/login 
+Content-Type: application/json 
+
+{ 
+	"email": ###REPLACE###,
+	"password": ###REPLACE###
+}
+
+###
+@token = {{login.response.body.sessionToken}}
+
+
+### TESTS BEGIN
+
+### Test 01: Get one existing employees by its id.
+### positive test 
+@empId = {{employees.response.body.0.employeeId}}
+GET {{BASE}}/employees/{{empId}} 
+Content-Type: application/json 
+
+
+### Test 02: Try get one existing employees by its nonexistent id.
+### negative test 
+GET {{BASE}}/employees/999999999
+Content-Type: application/json 
+
+
+### Test 03: Add a new employees successfully
+### Positive test 
+### We assume that the token has been aquired by the login request.
+# @name newemployees
+POST {{BASE}}/employees 
+Content-Type: application/json 
+Token: {{token}} 
+
+{
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"departmentId": ###REPLACE###,
+	"bossId": ###REPLACE###,
+	"firstName": ###REPLACE###,
+	"lastName": ###REPLACE###,
+	"salary": ###REPLACE###
+} 
+
+### Check the created employees
+
+@newemployeesid = {{newemployees.response.body.lastId}}
+GET {{BASE}}/employees/{{newemployeesid}}
+Content-Type: application/json 
+
+### Test 04: Add a new employees without a session token
+### Negative test 
+POST {{BASE}}/employees 
+Content-Type: application/json 
+
+{ 
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"departmentId": ###REPLACE###,
+	"bossId": ###REPLACE###,
+	"firstName": ###REPLACE###,
+	"lastName": ###REPLACE###,
+	"salary": ###REPLACE###
+}
+
+### Test 05: Modify an existing employees 
+### Positive test 
+@empId = {{employees.response.body.0.employeeId}} 
+PUT {{BASE}}/employees/{{empId}} 
+Content-Type: application/json 
+Token: {{token}} 
+
+{ 
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"departmentId": ###REPLACE###,
+	"bossId": ###REPLACE###,
+	"firstName": ###REPLACE###,
+	"lastName": ###REPLACE###,
+	"salary": ###REPLACE###
+}
+
+### Check the modified employees
+
+GET {{BASE}}/employees/{{newemployeesid}}
+Content-Type: application/json 
+
+### Test 06: Try to modify an existing employees without a session token
+### Negative test
+@empId = {{employees.response.body.0.employeeId}}
+PUT {{BASE}}/employees/{{empId}}
+Content-Type: application/json
+
+{
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"departmentId": ###REPLACE###,
+	"bossId": ###REPLACE###,
+	"firstName": ###REPLACE###,
+	"lastName": ###REPLACE###,
+	"salary": ###REPLACE###
+}
+
+### Test 07: Delete an existing employees
+### Positive test
+
+### Create a new employees, which we will delete
+# @name createdempToDelete
+POST {{BASE}}/employees
+Content-Type: application/json
+Token: {{token}}
+
+{
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"departmentId": ###REPLACE###,
+	"bossId": ###REPLACE###,
+	"firstName": ###REPLACE###,
+	"lastName": ###REPLACE###,
+	"salary": ###REPLACE###
+}
+
+### Check the created employees
+@empdelId = {{createdempToDelete.response.body.lastId}}
+GET {{BASE}}/employees/{{empdelId}}
+Content-Type: application/json 
+
+### Delete the employees
+DELETE {{BASE}}/employees/{{empdelId}}
+Token: {{token}}
+
+### Check the deleted employees
+GET {{BASE}}/employees/{{empdelId}}
+Content-Type: application/json 
+
+### Test 08: Try to delete a employees without a session token
+### Negative test
+DELETE {{BASE}}/employees/{{empId}}
+
