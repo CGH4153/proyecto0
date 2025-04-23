@@ -1,0 +1,28 @@
+form.form {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 1%;
+
+    /* Centrar el formulario */
+
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+div.form-group {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div.form-submit {
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+div.container {
+    position:relative
+}

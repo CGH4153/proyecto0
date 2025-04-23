@@ -1,12 +1,17 @@
+body.dark {
+    background-color: #222222;
+    color: #eeeeee;
+}
+
 .clickable {
     cursor: pointer;
 }
 
-div.title-block {
+div.header {
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: #eeeeee;
+    background-color: #222222;
 }
 
 .dept-group {
@@ -20,7 +25,7 @@ div.title-block {
 #title {
     font-size: 300%;
     text-decoration: none;
-    color: #444444;
+    color: #BBBBBB;
     font-family: sans-serif;
     margin-bottom: 0;
 }
@@ -28,13 +33,12 @@ div.title-block {
 #subtitle {
     font-size: 120%;
     font-style: italic;
-    color: #555555;
+    color: #BBBBBB;
     font-family: monospace;
-    color: #222222;
 }
 
 footer {
-    background-color: #eee;
+    background-color: #333333;
 }
 
 span.footer-text {
