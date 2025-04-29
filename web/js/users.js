@@ -13,15 +13,11 @@ function showUser(){
     let text;
 
     if(sessionManager.isLogged()){
-        const user = sessionManager.getLoggedUser();
-        console.log("Usuario logeado:", user.username);
-        let username = user.firstName;
+        let username = sessionManager.getLoggedUser.firstName;
         text = "Hola, " + username;
-        window.location.href = "index.html";
     }
 
     else{
-        console.log("No hay usuario logeado");
         text = "Índice de navegación";
     }
 

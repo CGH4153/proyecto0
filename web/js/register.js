@@ -43,6 +43,7 @@ async function sendRegister(formData){
 
     catch(err){
         messageRenderer.showErrorMessage("Error al registar el nuevo usuario", err);
+        console.log(err);
     }
 }
 
