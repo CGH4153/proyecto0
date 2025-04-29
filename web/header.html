@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
 </head>
-<body class="dark">
-    <div class="header">
+<body>
+    <div class="header header-mb-lg-5">
         <h1 id="title">Música</h1>
         <h3 id="subtitle">Hecho por Bella Moreno</h3>
     </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Índice de navegación</a>
 
@@ -28,18 +28,41 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse-navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
+                        <a class="nav-link" href="index.html" id="navbar-index"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="register.html">Registrarse</a>
+                        <a class="nav-link" href="shop.html" id="navbar-shop"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Tienda</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="login.html">Iniciar sesión</a>
+                        <a class="nav-link" href="information.html" id="navbar-information"><i class="fa fa-users" aria-hidden="true"></i> Sobre nosotros</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" id="navbar-contact"><i class="fa fa-phone" aria-hidden="true"></i> Contactar</a>
+                    </li>
+
+                    <li class="nav-item dropdown" id="navbar-account">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true"><i class="fa fa-sign-in" aria-hidden="true"></i> Cuenta</a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="register.html" id="navbar-register">Registrarse</a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="login.html" id="navbar-login">Iniciar sesión</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.html" id="navbar-logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>
                     </li>
                 </ul>
             </div>

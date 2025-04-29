@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
 </head>
-<body class="dark">
+<body>
     <div id="header"></div>
 
     <div class="container">
@@ -39,17 +39,17 @@
 
             <div class="form-group">
                 <label for="email-input">Correo electrónico:</label>
-                <input type="email" class="form-control" id="email-input" name="email" placeholder="Correo electrónico" pattern="^[a-zA-Z0-9]+@(alumn.)us.es$" required>
+                <input type="email" class="form-control" id="email-input" name="email" placeholder="Correo electrónico" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" required>
             </div>
 
             <div class="form-group">
                 <label for="password-input">Nueva contraseña:</label>
-                <input type="password" class="form-control" id="password-input" name="password" placeholder="Nueva contraseña" minlength="8" maxlength="15" pattern="[a-zA-Z0-9]+" title="La contraseña debe tener al menos 8 caracteres" required>
+                <input type="password" class="form-control" id="password-input" name="password" placeholder="Nueva contraseña" minlength="8" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos 8 caracteres, un número y una letra minúscula y otra mayúscula" required>
             </div>
 
             <div class="form-group">
                 <label for="password2-input">Repita la contraseña:</label>
-                <input type="password" class="form-control" id="password2-input" name="password2" placeholder="Repita la contraseña" pattern="[a-zA-Z0-9]+" required>
+                <input type="password" class="form-control" id="password2-input" name="password2" placeholder="Repita la contraseña" minlength="8" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener al menos 8 caracteres, un número y una letra minúscula y otra mayúscula" required>
             </div>
 
             <div class="form-submit">

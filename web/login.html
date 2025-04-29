@@ -17,19 +17,19 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
 </head>
-<body class="dark">
+<body>
     <div id="header"></div>
     
     <div class="container">
         <form class="form col-md-4">
             <div class="form-group">
-                <label for="username-input">Usuario:</label>
-                <input type="text" class="form-control" id="username-input" name="username" placeholder="Nombre de usuario" minlength="5" maxlength="15" pattern="[A-Za-z0-9]+" title="El nombre de usuario debe tener entre 5 y 15 letras y números" required>
+                <label for="username-input">Usuario o correo electrónico:</label>
+                <input type="text" class="form-control" id="username-input" name="username" placeholder="Nombre de usuario o correo electrónico" minlength="5" maxlength="15" pattern="[A-Za-z0-9]+" title="Nombre de usuario o correo electrónico no encontrado" required>
             </div>
 
             <div class="form-group">
                 <label for="password-input">Contraseña:</label>
-                <input type="password" class="form-control" id="password-input" name="password" placeholder="Contraseña" required>
+                <input type="password" class="form-control" id="password-input" name="password" placeholder="Contraseña" minlength="8" maxlength="15" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Contraseña incorrecta" required>
             </div>
 
             <div class="form-submit">

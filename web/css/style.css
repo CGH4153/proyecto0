@@ -1,17 +1,30 @@
-body.dark {
-    background-color: #222222;
-    color: #eeeeee;
-}
-
 .clickable {
     cursor: pointer;
+}
+
+nav.navbar {
+    background-color: darksalmon;
+}
+
+.navbar .navbar-brand {
+    color: black !important;
+    font-style: italic;
+}
+
+.navbar .nav-link {
+    color: black !important;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: white !important;
 }
 
 div.header {
     text-align: center;
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: #222222;
+    background-color: darksalmon;
 }
 
 .dept-group {
@@ -25,7 +38,7 @@ div.header {
 #title {
     font-size: 300%;
     text-decoration: none;
-    color: #BBBBBB;
+    color:aliceblue;
     font-family: sans-serif;
     margin-bottom: 0;
 }
@@ -33,7 +46,7 @@ div.header {
 #subtitle {
     font-size: 120%;
     font-style: italic;
-    color: #BBBBBB;
+    color: aliceblue;
     font-family: monospace;
 }
 
@@ -44,5 +57,10 @@ footer {
 span.footer-text {
     margin-left: 1%;
     margin-bottom: 2%;
+    font-style: italic;
+}
+
+div.collapse-navbar-collapse {
+    text-align: right;
     font-style: italic;
 }
