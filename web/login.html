@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio de sesión</title>
+    <title>Iniciar sesión</title>
 
     <script src="js/utils/include.js"></script>
 
@@ -17,16 +17,21 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
 
+    <script src="js/libs/axios.min.js"></script>
+
     <script type="module" src="js/users.js"></script>
+    <script type="module" src="js/login.js"></script>
 </head>
 <body>
     <div id="header"></div>
+
+    <div id="errors"></div>
     
     <div class="container">
-        <form class="form col-md-4">
+        <form class="form col-md-4" id="form-login">
             <div class="form-group">
-                <label for="username-input">Usuario o correo electrónico: <span class="required">*</span></label>
-                <input type="text" class="form-control" id="username-input" name="username" placeholder="Nombre de usuario o correo electrónico" minlength="5" maxlength="15" pattern="[A-Za-z0-9]+" title="Nombre de usuario o correo electrónico no encontrado" required>
+                <label for="identifier-input">Usuario o correo electrónico: <span class="required">*</span></label>
+                <input type="text" class="form-control" id="identifier-input" name="identifier" placeholder="Nombre de usuario o correo electrónico" minlength="5" maxlength="15" pattern="[A-Za-z0-9]+" title="Nombre de usuario o correo electrónico no encontrado" required>
             </div>
 
             <div class="form-group">

@@ -13,12 +13,15 @@ function showUser(){
     let text;
 
     if(sessionManager.isLogged()){
-        let username = sessionManager.getLoggedUser().firstName;
+        const user = sessionManager.getLoggedUser();
+        console.log("Usuario logeado:", user.username);
+        let username = user.firstName;
         text = "Hola, " + username;
         window.location.href = "index.html";
     }
 
     else{
+        console.log("No hay usuario logeado");
         text = "Índice de navegación";
     }
 
@@ -35,17 +38,9 @@ function addLogoutHandler(){
 }
 
 function hideHeaderOptions(){
-    console.log("Estado de sesión:", sessionManager.isLogged());
-    console.log("Usuario actual:", sessionManager.getLoggedUser());
-
     let headerRegister = document.getElementById("navbar-register");
     let headerLogin = document.getElementById("navbar-login");
     let headerLogout = document.getElementById("navbar-logout");
-
-    if (!headerRegister || !headerLogin || !headerLogout) {
-        console.error("No se encontraron todos los elementos del navbar");
-        return;
-    }
 
     if(sessionManager.isLogged()){
         headerRegister.style.display = "none";
@@ -54,8 +49,6 @@ function hideHeaderOptions(){
     }
 
     else{
-        headerRegister.style.display = "";
-        headerLogin.style.display = "";
         headerLogout.style.display = "none";
     }
 }
