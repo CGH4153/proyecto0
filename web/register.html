@@ -24,27 +24,32 @@
         <form class="form col-md-4">
             <div class="form-group">
                 <label for="firstname-input">Nombre:</label>
-                <input type="text" class="form-control" id="firstname-input" name="firstname" placeholder="Nombre">
+                <input type="text" class="form-control" id="firstname-input" name="firstname" placeholder="Nombre" required>
             </div>
 
             <div class="form-group">
                 <label for="lastname-input">Apellidos:</label>
-                <input type="text" class="form-control" id="lastname-input" name="lastname" placeholder="Apellidos">
+                <input type="text" class="form-control" id="lastname-input" name="lastname" placeholder="Apellidos" required>
             </div>
 
             <div class="form-group">
                 <label for="username-input">Nombre de usuario:</label>
-                <input type="text" class="form-control" id="username-input" name="username" placeholder="Nombre de usuario">
+                <input type="text" class="form-control" id="username-input" name="username" placeholder="Nombre de usuario" minlength="5" maxlength="15" pattern="[A-Za-z0-9]+" title="El nombre de usuario debe tener entre 5 y 15 letras y números" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email-input">Correo electrónico:</label>
+                <input type="email" class="form-control" id="email-input" name="email" placeholder="Correo electrónico" pattern="^[a-zA-Z0-9]+@(alumn.)us.es$" required>
             </div>
 
             <div class="form-group">
                 <label for="password-input">Nueva contraseña:</label>
-                <input type="password" class="form-control" id="password-input" name="password" placeholder="Nueva contraseña">
+                <input type="password" class="form-control" id="password-input" name="password" placeholder="Nueva contraseña" minlength="8" maxlength="15" pattern="[a-zA-Z0-9]+" title="La contraseña debe tener al menos 8 caracteres" required>
             </div>
 
             <div class="form-group">
                 <label for="password2-input">Repita la contraseña:</label>
-                <input type="password" class="form-control" id="password2-input" name="password2" placeholder="Repita la contraseña">
+                <input type="password" class="form-control" id="password2-input" name="password2" placeholder="Repita la contraseña" pattern="[a-zA-Z0-9]+" required>
             </div>
 
             <div class="form-submit">

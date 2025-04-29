@@ -24,12 +24,12 @@
         <form class="form col-md-4">
             <div class="form-group">
                 <label for="username-input">Usuario:</label>
-                <input type="text" class="form-control" id="username-input" name="username" placeholder="Nombre de usuario">
+                <input type="text" class="form-control" id="username-input" name="username" placeholder="Nombre de usuario" minlength="5" maxlength="15" pattern="[A-Za-z0-9]+" title="El nombre de usuario debe tener entre 5 y 15 letras y números" required>
             </div>
 
             <div class="form-group">
                 <label for="password-input">Contraseña:</label>
-                <input type="password" class="form-control" id="password-input" name="password" placeholder="Contraseña">
+                <input type="password" class="form-control" id="password-input" name="password" placeholder="Contraseña" required>
             </div>
 
             <div class="form-submit">
