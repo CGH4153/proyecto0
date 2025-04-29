@@ -27,6 +27,10 @@ div.header {
     background-color: darksalmon;
 }
 
+span {
+    color: red;
+}
+
 .dept-group {
     font-size: 150%;
 }
