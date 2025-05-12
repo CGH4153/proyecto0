@@ -37,15 +37,23 @@ function hideHeaderOptions(){
     let headerRegister = document.getElementById("navbar-register");
     let headerLogin = document.getElementById("navbar-login");
     let headerLogout = document.getElementById("navbar-logout");
+    let headerAccount = document.getElementById("navbar-myaccount");
+    let headerSettings = document.getElementById("navbar-settings");
 
     if(sessionManager.isLogged()){
         headerRegister.style.display = "none";
         headerLogin.style.display = "none";
         headerLogout.style.display = "";
+        headerAccount.style.display = "";
+        headerSettings.style.display = "";
     }
 
     else{
+        headerRegister.style.display = "";
+        headerLogin.style.display = "";
         headerLogout.style.display = "none";
+        headerAccount.style.display = "none";
+        headerSettings.style.display = "none";
     }
 }
 

@@ -19,13 +19,28 @@
     <script src="/js/libs/bootstrap.min.js"></script>
 
     <script type="module" src="js/users.js"></script>
+    <script type="module" src="js/index.js"></script>
+
+    <script src="js/libs/axios.min.js"></script>
 
 </head>
 <body>
     <div id="header"></div>
 
+    <div id="errors"></div>
+
+    <div class="photo-gallery col-md" id="photo-gallery"></div> <!--Hacer card-->
+
+    <div class="container"></div>
+
+    <div id="footer"></div>
+
     <script>
         include("header.html", "#header");
+    </script>
+
+    <script>
+        include("footer.html", "#footer");
     </script>
 </body>
 </html>

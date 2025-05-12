@@ -27,6 +27,13 @@ div.header {
     background-color: darksalmon;
 }
 
+div.footer {
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: rgb(135, 130, 129);
+}
+
 span {
     color: red;
 }
@@ -54,14 +61,11 @@ span {
     font-family: monospace;
 }
 
-footer {
-    background-color: #333333;
-}
-
-span.footer-text {
-    margin-left: 1%;
-    margin-bottom: 2%;
+#thanks {
+    font-size: 100%;
     font-style: italic;
+    color: rgb(29, 31, 32);
+    font-family: monospace;
 }
 
 div.collapse-navbar-collapse {
