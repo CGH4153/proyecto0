@@ -1,0 +1,66 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'dvalentino'",
+        "route": "/dvalentino",
+        "method": "GET",
+        "sql": "SELECT * FROM dvalentino",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'dvalentino' by its primary key",
+        "route": "/dvalentino/$musicId",
+        "method": "GET",
+        "sql": "SELECT * FROM dvalentino WHERE musicId = $musicId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'dvalentino'",
+        "route": "/dvalentino",
+        "method": "POST",
+        "sql": "INSERT INTO dvalentino (nombre, url, artista, fecha_publicacion, spotify_id) VALUES ($nombre, $url, $artista, $fecha_publicacion, $spotify_id)",
+        "request_body_params": [
+            "nombre",
+            "url",
+            "artista",
+            "fecha_publicacion",
+            "spotify_id"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'dvalentino' by its primary key",
+        "route": "/dvalentino/$musicId",
+        "method": "PUT",
+        "sql": "UPDATE dvalentino SET nombre = $nombre, url = $url, artista = $artista, fecha_publicacion = $fecha_publicacion, spotify_id = $spotify_id WHERE musicId = $musicId",
+        "request_body_params": [
+            "nombre",
+            "url",
+            "artista",
+            "fecha_publicacion",
+            "spotify_id"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'dvalentino' by its primary key",
+        "route": "/dvalentino/$musicId",
+        "method": "DELETE",
+        "sql": "DELETE FROM dvalentino WHERE musicId = $musicId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

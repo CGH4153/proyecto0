@@ -1,0 +1,66 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'stickyma'",
+        "route": "/stickyma",
+        "method": "GET",
+        "sql": "SELECT * FROM stickyma",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'stickyma' by its primary key",
+        "route": "/stickyma/$musicId",
+        "method": "GET",
+        "sql": "SELECT * FROM stickyma WHERE musicId = $musicId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'stickyma'",
+        "route": "/stickyma",
+        "method": "POST",
+        "sql": "INSERT INTO stickyma (nombre, url, artista, fecha_publicacion, spotify_id) VALUES ($nombre, $url, $artista, $fecha_publicacion, $spotify_id)",
+        "request_body_params": [
+            "nombre",
+            "url",
+            "artista",
+            "fecha_publicacion",
+            "spotify_id"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'stickyma' by its primary key",
+        "route": "/stickyma/$musicId",
+        "method": "PUT",
+        "sql": "UPDATE stickyma SET nombre = $nombre, url = $url, artista = $artista, fecha_publicacion = $fecha_publicacion, spotify_id = $spotify_id WHERE musicId = $musicId",
+        "request_body_params": [
+            "nombre",
+            "url",
+            "artista",
+            "fecha_publicacion",
+            "spotify_id"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'stickyma' by its primary key",
+        "route": "/stickyma/$musicId",
+        "method": "DELETE",
+        "sql": "DELETE FROM stickyma WHERE musicId = $musicId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

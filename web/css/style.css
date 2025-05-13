@@ -72,3 +72,73 @@ div.collapse-navbar-collapse {
     text-align: right;
     font-style: italic;
 }
+
+div.card {
+    background-color:darksalmon;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#card-title {
+    font-style: italic;
+    text-align: justify;
+    color: rgb(29, 31, 32);
+    size: 50px;
+    text-decoration: none; /* Quita el subrayado */
+}
+
+a.card-artist {
+    font-style: italic;
+    text-align: justify;
+    color: rgb(29, 31, 32);
+    text-decoration: none; /* Quita el subrayado */
+}
+
+p.card-date {
+    font-style: italic;
+    text-align: right;
+    color: rgb(29, 31, 32);
+}
+
+a.card-artist:hover {
+    color: red !important;
+}
+
+a.card-title:hover {
+    color: red !important;
+}
+
+p {
+    font-style: italic;
+    text-align: justify;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#artist-name {
+    font-size: 300%;
+    text-decoration: none;
+    font-family:'Times New Roman', Times, serif;
+    padding-left: 1%;
+}
+
+a.link-artist {
+    font-style: italic;
+    text-align: justify;
+    color: rgb(29, 31, 32);
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 3%;
+}
+
+a.link-artist:hover {
+    color:navy !important;
+}
+
+a.link-artist:link {
+    color: rgb(29, 31, 32);
+}
+
+a.link-artist:visited {
+    color: rgb(87, 84, 84);
+}

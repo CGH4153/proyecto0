@@ -1,0 +1,66 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'diego900'",
+        "route": "/diego900",
+        "method": "GET",
+        "sql": "SELECT * FROM diego900",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'diego900' by its primary key",
+        "route": "/diego900/$musicId",
+        "method": "GET",
+        "sql": "SELECT * FROM diego900 WHERE musicId = $musicId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'diego900'",
+        "route": "/diego900",
+        "method": "POST",
+        "sql": "INSERT INTO diego900 (nombre, url, artista, fecha_publicacion, spotify_id) VALUES ($nombre, $url, $artista, $fecha_publicacion, $spotify_id)",
+        "request_body_params": [
+            "nombre",
+            "url",
+            "artista",
+            "fecha_publicacion",
+            "spotify_id"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'diego900' by its primary key",
+        "route": "/diego900/$musicId",
+        "method": "PUT",
+        "sql": "UPDATE diego900 SET nombre = $nombre, url = $url, artista = $artista, fecha_publicacion = $fecha_publicacion, spotify_id = $spotify_id WHERE musicId = $musicId",
+        "request_body_params": [
+            "nombre",
+            "url",
+            "artista",
+            "fecha_publicacion",
+            "spotify_id"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'diego900' by its primary key",
+        "route": "/diego900/$musicId",
+        "method": "DELETE",
+        "sql": "DELETE FROM diego900 WHERE musicId = $musicId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

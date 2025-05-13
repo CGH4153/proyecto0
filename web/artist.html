@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página principal</title>
+    <title>Artista</title>
 
     <script src="js/utils/include.js"></script>
 
@@ -18,29 +18,23 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
 
-    <script type="module" src="js/users.js"></script>
-    <script type="module" src="js/index.js"></script>
-
     <script src="js/libs/axios.min.js"></script>
 
+    <script type="module" src="js/artist.js"></script>
 </head>
 <body>
     <div id="header"></div>
 
-    <div id="errors"></div>
-
+    <h1 id="artist-name"></h1>
+    <div id="artist-info"></div>
     <div class="container">
-        <div class="photo-gallery col-md" id="photo-gallery"></div>
+            <div class="photo-gallery col-md" id="photo-gallery"></div>
     </div>
 
-    <div id="footer"></div>
+    <div id="errors"></div>
 
     <script>
         include("header.html", "#header");
-    </script>
-
-    <script>
-        include("footer.html", "#footer");
     </script>
 </body>
 </html>

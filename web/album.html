@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página principal</title>
+    <title>Código Spotify</title>
 
     <script src="js/utils/include.js"></script>
 
@@ -18,29 +18,11 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script src="/js/libs/bootstrap.min.js"></script>
 
-    <script type="module" src="js/users.js"></script>
-    <script type="module" src="js/index.js"></script>
-
     <script src="js/libs/axios.min.js"></script>
 
+    <script type="module" src="js/spotify.js"></script>
 </head>
 <body>
-    <div id="header"></div>
-
-    <div id="errors"></div>
-
-    <div class="container">
-        <div class="photo-gallery col-md" id="photo-gallery"></div>
-    </div>
-
-    <div id="footer"></div>
-
-    <script>
-        include("header.html", "#header");
-    </script>
-
-    <script>
-        include("footer.html", "#footer");
-    </script>
+    <div id="spotify-frame" style="margin:0; padding:0; overflow:hidden; width:100vw; height:100vh; position:fixed; top:0; left:0;"></div>
 </body>
 </html>
