@@ -30,8 +30,8 @@ API_PREFIX = "/api/v1"
 
 # Table and fields that are used for both login and register
 USER_AUTH_DATA = {
-    "table": "Users",
-    "identifier": "email",
+    "table": "users",
+    "identifier": "username",
     "password": "password",
 }
 

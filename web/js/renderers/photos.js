@@ -27,9 +27,11 @@ asAlbum: function(photo) {
 
     let html = `<div class="col-md-4">
     <div class="card">
+    <a class="card-photo" href="album.html?id=${photo.spotify_id}">
     <img src="${photo.url}" class="card-img-top">
+    </a>
     <div class="card-body">
-    <a class="card-title" id="card-title" href="album.html?id=${photo.spotify_id}">${photo.nombre}</a>
+    <p class="card-title">${photo.nombre}</p>
     <p class="card-artist"> ${photo.artista}</p>
     <p class="card-date">${fechaFormateada}</p>
     </div>

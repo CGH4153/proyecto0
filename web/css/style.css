@@ -104,10 +104,6 @@ a.card-artist:hover {
     color: red !important;
 }
 
-a.card-title:hover {
-    color: red !important;
-}
-
 p {
     font-style: italic;
     text-align: justify;

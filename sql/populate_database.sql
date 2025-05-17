@@ -20,3 +20,9 @@ INSERT INTO recycledj (nombre, url, artista, fecha_publicacion, spotify_id) VALU
 ('Milagro', 'https://th.bing.com/th/id/R.f783aeb3283e52cd2316037a458f979e?rik=vLU0yU%2bC4YWDRQ&riu=http%3a%2f%2fmp3.hhgroups.com%2falbumes%2fRecycled-J-y-One-Path-Milagro-48503_front.jpg&ehk=gwp6ypphPlWUfz1LPGAB98smJ%2fgiAnuiCttbNj7P3pM%3d&risl=&pid=ImgRaw&r=0', "Recycled J", '2017-02-27', '6P2wHVks69uYQW8zXldxGm'),
 ('B.L.O.W.', 'https://th.bing.com/th/id/R.ad3a79dda79df1ba21b7b159aa59b285?rik=LeRryX4gLt1QZA&riu=http%3a%2f%2fmp3.hhgroups.com%2falbumes%2fRecycled-J-y-Ezzem-B.L.O.W.-45322_front.jpg&ehk=1CYr1xgpYtQishEjphcYB7UvwDjWT9LzpHgjXh0r2QA%3d&risl=&pid=ImgRaw&r=0', "Recycled J", '2016-02-06', '47lbWPw68zNutwEM70t0Uc'),
 ('Oasis', 'https://i.ytimg.com/vi/EeUnf98tH3o/hqdefault.jpg', "Recycled J", '2015-08-10', '3HxbKOP6n8HWhdsOaoJzkC');
+
+INSERT INTO dvalentino (nombre, url, artista, fecha_publicacion, spotify_id) VALUES
+('Ciao!', 'https://th.bing.com/th/id/OIP.qoh7puAkQB7Mf9zyms1KnwHaHa?rs=1&pid=ImgDetMain', 'D.Valentino', '2025-02-15', '10yYYzdkRsTboBKxXLd1Ft'),
+('Rosa&Rojo', 'https://images.genius.com/bce600d232d859234cba07e6ff8703b5.1000x1000x1.png', 'D.Valentino', '2024-10-18', '5jSAThFjToZdNUWXSMgXuO'),
+('Sweet Dreamz 2', 'https://t2.genius.com/unsafe/300x300/https://images.genius.com/3842f2b22af94d345d10f7238c6eaace.300x300x1.jpg', 'D.Valentino', '2023-02-14', '3sU5CuVLirRWGq698ok3T3');
+

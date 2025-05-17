@@ -2,6 +2,7 @@
 
 import { parseHTML } from "/js/utils/parseHTML.js";
 import { recycledjAPI_auto } from "/js/api/_recycledj.js";
+import { dvalentinoAPI_auto } from "/js/api/_dvalentino.js";
 import { albumRenderer } from "/js/renderers/albums.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             let html = `<div class="info">
             <p>Jorge Escorial Moreno (Carabanchel, Madrid, 17 de julio de 1993), popularmente conocido por su nombre artístico Recycled J, es un artista y rapero español​ que se nutre tanto del reguetón, el R&B y el trap como de la electrónica. ​Es conocido por ser un referente dentro de la escena del rap madrileño, género del que bebe su esencia, ya que sus inicios en la música fueron a través del freestyle en distintos parques de su ciudad. De ahí, pasó a la música con el seudónimo de Cool y formó parte del grupo Prefijo91.​ Tras retirarse por un tiempo de la escena musical, volvió con un nuevo seudónimo.</p>
             <a class="link-artist" href="https://recycledj.com/"> Contactar</a>
-            <div class="spotify-col-md-4">
+            <div class="spotify-col-md-4"></div>
             </div>`;
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
@@ -39,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
             let photos = await dvalentinoAPI_auto.getAll();
-            let cardGallery = galleryRenderer.asCardGallery(photos);
+            let cardGallery = albumRenderer.asCardGallery(photos);
             galleryContainer.appendChild(cardGallery);
         }
 

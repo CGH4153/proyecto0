@@ -13,7 +13,8 @@ function showUser(){
     let text;
 
     if(sessionManager.isLogged()){
-        let username = sessionManager.getLoggedUser.firstName;
+        let username = sessionManager.getLoggedUser().firstName;
+
         text = "Hola, " + username;
     }
 
