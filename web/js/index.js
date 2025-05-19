@@ -15,7 +15,7 @@ async function main() {
 
     // Aceptar cookies
     document.getElementById("accept-cookies").onclick = () => {
-        document.cookie = "cookiesAccepted=true; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/";
+        document.cookie = "cookiesAccepted=true; path=/";
         document.getElementById("cookie-banner").style.display = "none";
     };
 };
