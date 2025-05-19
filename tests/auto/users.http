@@ -7,19 +7,19 @@
 
 ### Auxiliary query
 ### Positive test
-### Test 00: Get all existing employees
+### Test 00: Get all existing users
 ### This query is used in several of the below tests it should be executed first.
-# @name employees
-GET {{BASE}}/employees
+# @name users
+GET {{BASE}}/users
 
-### Login a(n) employees and save the generated token 
+### Login a(n) users and save the generated token 
 ### This token is used in several of the below tests it should be executed second.
 # @name login
 POST {{BASE}}/login 
 Content-Type: application/json 
 
 { 
-	"email": ###REPLACE###,
+	"username": ###REPLACE###,
 	"password": ###REPLACE###
 }
 
@@ -29,129 +29,119 @@ Content-Type: application/json
 
 ### TESTS BEGIN
 
-### Test 01: Get one existing employees by its id.
+### Test 01: Get one existing users by its id.
 ### positive test 
-@empId = {{employees.response.body.0.employeeId}}
-GET {{BASE}}/employees/{{empId}} 
+@useId = {{users.response.body.0.userId}}
+GET {{BASE}}/users/{{useId}} 
 Content-Type: application/json 
 
 
-### Test 02: Try get one existing employees by its nonexistent id.
+### Test 02: Try get one existing users by its nonexistent id.
 ### negative test 
-GET {{BASE}}/employees/999999999
+GET {{BASE}}/users/999999999
 Content-Type: application/json 
 
 
-### Test 03: Add a new employees successfully
+### Test 03: Add a new users successfully
 ### Positive test 
 ### We assume that the token has been aquired by the login request.
-# @name newemployees
-POST {{BASE}}/employees 
+# @name newusers
+POST {{BASE}}/users 
 Content-Type: application/json 
 Token: {{token}} 
 
 {
 	"email": ###REPLACE###,
 	"password": ###REPLACE###,
-	"departmentId": ###REPLACE###,
-	"bossId": ###REPLACE###,
 	"firstName": ###REPLACE###,
 	"lastName": ###REPLACE###,
-	"salary": ###REPLACE###
+	"username": ###REPLACE###
 } 
 
-### Check the created employees
+### Check the created users
 
-@newemployeesid = {{newemployees.response.body.lastId}}
-GET {{BASE}}/employees/{{newemployeesid}}
+@newusersid = {{newusers.response.body.lastId}}
+GET {{BASE}}/users/{{newusersid}}
 Content-Type: application/json 
 
-### Test 04: Add a new employees without a session token
+### Test 04: Add a new users without a session token
 ### Negative test 
-POST {{BASE}}/employees 
+POST {{BASE}}/users 
 Content-Type: application/json 
 
 { 
 	"email": ###REPLACE###,
 	"password": ###REPLACE###,
-	"departmentId": ###REPLACE###,
-	"bossId": ###REPLACE###,
 	"firstName": ###REPLACE###,
 	"lastName": ###REPLACE###,
-	"salary": ###REPLACE###
+	"username": ###REPLACE###
 }
 
-### Test 05: Modify an existing employees 
+### Test 05: Modify an existing users 
 ### Positive test 
-@empId = {{employees.response.body.0.employeeId}} 
-PUT {{BASE}}/employees/{{empId}} 
+@useId = {{users.response.body.0.userId}} 
+PUT {{BASE}}/users/{{useId}} 
 Content-Type: application/json 
 Token: {{token}} 
 
 { 
 	"email": ###REPLACE###,
 	"password": ###REPLACE###,
-	"departmentId": ###REPLACE###,
-	"bossId": ###REPLACE###,
 	"firstName": ###REPLACE###,
 	"lastName": ###REPLACE###,
-	"salary": ###REPLACE###
+	"username": ###REPLACE###
 }
 
-### Check the modified employees
+### Check the modified users
 
-GET {{BASE}}/employees/{{newemployeesid}}
+GET {{BASE}}/users/{{newusersid}}
 Content-Type: application/json 
 
-### Test 06: Try to modify an existing employees without a session token
+### Test 06: Try to modify an existing users without a session token
 ### Negative test
-@empId = {{employees.response.body.0.employeeId}}
-PUT {{BASE}}/employees/{{empId}}
+@useId = {{users.response.body.0.userId}}
+PUT {{BASE}}/users/{{useId}}
 Content-Type: application/json
 
 {
 	"email": ###REPLACE###,
 	"password": ###REPLACE###,
-	"departmentId": ###REPLACE###,
-	"bossId": ###REPLACE###,
 	"firstName": ###REPLACE###,
 	"lastName": ###REPLACE###,
-	"salary": ###REPLACE###
+	"username": ###REPLACE###
 }
 
-### Test 07: Delete an existing employees
+### Test 07: Delete an existing users
 ### Positive test
 
-### Create a new employees, which we will delete
-# @name createdempToDelete
-POST {{BASE}}/employees
+### Create a new users, which we will delete
+# @name createduseToDelete
+POST {{BASE}}/users
 Content-Type: application/json
 Token: {{token}}
 
 {
 	"email": ###REPLACE###,
 	"password": ###REPLACE###,
-	"departmentId": ###REPLACE###,
-	"bossId": ###REPLACE###,
 	"firstName": ###REPLACE###,
 	"lastName": ###REPLACE###,
-	"salary": ###REPLACE###
+	"username": ###REPLACE###
 }
 
-### Check the created employees
-@empdelId = {{createdempToDelete.response.body.lastId}}
-GET {{BASE}}/employees/{{empdelId}}
+### Check the created users
+@usedelId = {{createduseToDelete.response.body.lastId}}
+GET {{BASE}}/users/{{usedelId}}
 Content-Type: application/json 
 
-### Delete the employees
-DELETE {{BASE}}/employees/{{empdelId}}
+### Delete the users
+DELETE {{BASE}}/users/{{usedelId}}
 Token: {{token}}
 
-### Check the deleted employees
-GET {{BASE}}/employees/{{empdelId}}
+### Check the deleted users
+GET {{BASE}}/users/{{usedelId}}
 Content-Type: application/json 
 
-### Test 08: Try to delete a employees without a session token
+### Test 08: Try to delete a users without a session token
 ### Negative test
-DELETE {{BASE}}/employees/{{empId}}
+DELETE {{BASE}}/users/{{useId}}
 

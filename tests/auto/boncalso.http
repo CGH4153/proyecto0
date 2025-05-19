@@ -1,0 +1,147 @@
+
+### This is an auto-generated test suite, it needs to be completed with valid data.
+### These are not all tests you need, more of them should be created to evaluate the functional
+### requirements of your project. These tests only test the CRUD endpoints of the entity.
+### Silence is a DEAL research team project, more info about us in https://deal.us.es
+@BASE = http://127.0.0.1:8080/api/v1
+
+### Auxiliary query
+### Positive test
+### Test 00: Get all existing boncalso
+### This query is used in several of the below tests it should be executed first.
+# @name boncalso
+GET {{BASE}}/boncalso
+
+### Login a(n) users and save the generated token 
+### This token is used in several of the below tests it should be executed second.
+# @name login
+POST {{BASE}}/login 
+Content-Type: application/json 
+
+{ 
+	"username": ###REPLACE###,
+	"password": ###REPLACE###
+}
+
+###
+@token = {{login.response.body.sessionToken}}
+
+
+### TESTS BEGIN
+
+### Test 01: Get one existing boncalso by its id.
+### positive test 
+@bonId = {{boncalso.response.body.0.musicId}}
+GET {{BASE}}/boncalso/{{bonId}} 
+Content-Type: application/json 
+
+
+### Test 02: Try get one existing boncalso by its nonexistent id.
+### negative test 
+GET {{BASE}}/boncalso/999999999
+Content-Type: application/json 
+
+
+### Test 03: Add a new boncalso successfully
+### Positive test 
+### We assume that the token has been aquired by the login request.
+# @name newboncalso
+POST {{BASE}}/boncalso 
+Content-Type: application/json 
+Token: {{token}} 
+
+{
+	"nombre": ###REPLACE###,
+	"url": ###REPLACE###,
+	"artista": ###REPLACE###,
+	"fecha_publicacion": ###REPLACE###,
+	"spotify_id": ###REPLACE###
+} 
+
+### Check the created boncalso
+
+@newboncalsoid = {{newboncalso.response.body.lastId}}
+GET {{BASE}}/boncalso/{{newboncalsoid}}
+Content-Type: application/json 
+
+### Test 04: Add a new boncalso without a session token
+### Negative test 
+POST {{BASE}}/boncalso 
+Content-Type: application/json 
+
+{ 
+	"nombre": ###REPLACE###,
+	"url": ###REPLACE###,
+	"artista": ###REPLACE###,
+	"fecha_publicacion": ###REPLACE###,
+	"spotify_id": ###REPLACE###
+}
+
+### Test 05: Modify an existing boncalso 
+### Positive test 
+@bonId = {{boncalso.response.body.0.musicId}} 
+PUT {{BASE}}/boncalso/{{bonId}} 
+Content-Type: application/json 
+Token: {{token}} 
+
+{ 
+	"nombre": ###REPLACE###,
+	"url": ###REPLACE###,
+	"artista": ###REPLACE###,
+	"fecha_publicacion": ###REPLACE###,
+	"spotify_id": ###REPLACE###
+}
+
+### Check the modified boncalso
+
+GET {{BASE}}/boncalso/{{newboncalsoid}}
+Content-Type: application/json 
+
+### Test 06: Try to modify an existing boncalso without a session token
+### Negative test
+@bonId = {{boncalso.response.body.0.musicId}}
+PUT {{BASE}}/boncalso/{{bonId}}
+Content-Type: application/json
+
+{
+	"nombre": ###REPLACE###,
+	"url": ###REPLACE###,
+	"artista": ###REPLACE###,
+	"fecha_publicacion": ###REPLACE###,
+	"spotify_id": ###REPLACE###
+}
+
+### Test 07: Delete an existing boncalso
+### Positive test
+
+### Create a new boncalso, which we will delete
+# @name createdbonToDelete
+POST {{BASE}}/boncalso
+Content-Type: application/json
+Token: {{token}}
+
+{
+	"nombre": ###REPLACE###,
+	"url": ###REPLACE###,
+	"artista": ###REPLACE###,
+	"fecha_publicacion": ###REPLACE###,
+	"spotify_id": ###REPLACE###
+}
+
+### Check the created boncalso
+@bondelId = {{createdbonToDelete.response.body.lastId}}
+GET {{BASE}}/boncalso/{{bondelId}}
+Content-Type: application/json 
+
+### Delete the boncalso
+DELETE {{BASE}}/boncalso/{{bondelId}}
+Token: {{token}}
+
+### Check the deleted boncalso
+GET {{BASE}}/boncalso/{{bondelId}}
+Content-Type: application/json 
+
+### Test 08: Try to delete a boncalso without a session token
+### Negative test
+DELETE {{BASE}}/boncalso/{{bonId}}
+
