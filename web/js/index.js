@@ -9,16 +9,16 @@ async function main() {
 
     // Función para mostrar el banner si no se ha aceptado previamente
     window.onload = () => {
-    if (!getCookie("cookiesAccepted")) {
-        document.getElementById("cookie-banner").style.display = "block";
-    }
+        if (!getCookie("cookiesAccepted")) {
+            document.getElementById("cookie-banner").style.display = "block";
+        }
 
-    // Aceptar cookies
-    document.getElementById("accept-cookies").onclick = () => {
-        document.cookie = "cookiesAccepted=true; path=/";
-        document.getElementById("cookie-banner").style.display = "none";
+        // Aceptar cookies
+        document.getElementById("accept-cookies").onclick = () => {
+            document.cookie = "cookiesAccepted=true; path=/";
+            document.getElementById("cookie-banner").style.display = "none";
+        };
     };
-};
 }
 
 async function loadAllPhotos() {
