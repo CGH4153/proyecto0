@@ -42,7 +42,7 @@ INSERT INTO hoke (nombre, url, artista, fecha_publicacion, spotify_id) VALUES
 ('TRES CREUS', 'https://bing.com/th/id/OIP.JJsj39VkoJvyn-xsdcoHJAHaHa?cb=thvnextc2&rs=1&pid=ImgDetMain', 'Hoke', '2024-12-18', '3XBIEuPt853rX8Fn5DbG5s'),
 ('BBO', 'https://th.bing.com/th/id/OIP.pdRp65AZMW3BxEuvXQjKTAHaHa?rs=1&pid=ImgDetMain', 'Hoke', '2022-09-15', '0ofRuEkUDbOtzmxqeZs8Pw');
 
-INSERT INTO lhaine (nombre, url, artista, fecha_publicacion, spotify_id) VALUES
+INSERT INTO juicybae (nombre, url, artista, fecha_publicacion, spotify_id) VALUES
 ('El Secreto', 'https://www.lahiguera.net/musicalia/artistas/varios/disco/14216/juicy_bae_el_secreto-portada.jpg', "Juicy BAE", '2025-04-25', '4NJFWpVWPgPvrciytpxOvr'),
 ('Antes de Conocerte (Parte I: Premonición)', 'https://bing.com/th/id/OIP.aajulKx4y-p7UwaVpGYhUgHaHa?cb=thvnextc2&rs=1&pid=ImgDetMain', "Juicy BAE", '2023-05-12', '3m6TsytKnxFmghjbFWLraO'),
 ('PTSD', 'https://th.bing.com/th/id/OIP.gHuA8yuUdqSCjz5KjHUi2AHaHa?rs=1&pid=ImgDetMain', 'Juicy BAE', '2022-04-11', '3uCDoXLQZnDAck1R6Y0Tuk'),
@@ -58,7 +58,7 @@ INSERT INTO delaossa (nombre, url, artista, fecha_publicacion, spotify_id) VALUE
 ('Un Perro Andaluz', 'https://bing.com/th/id/OIP.m0s6537k76BjJYo3BipqzQHaHa?cb=thvnextc2&rs=1&pid=ImgDetMain', 'Delaossa', '2019-04-28', '08Pq65v9n2sUoJYLQPGhC8');
 
 INSERT INTO boncalso (nombre, url, artista, fecha_publicacion, spotify_id) VALUES 
-('Número 7', 'https://images.genius.com/a3c98401bb029cdf69d8abd1fd9b47b4.1000x1000x1.png', 'Bon Calso', '2025-02-07', ''),
+('Número 7', 'https://images.genius.com/a3c98401bb029cdf69d8abd1fd9b47b4.1000x1000x1.png', 'Bon Calso', '2025-02-07', '0TFFjqNMABn28kZ4L7wnlO'),
 ('OUTTA CONTROL', 'https://images.genius.com/dd2df4e8cb4ef338528158238cbcd92c.1000x1000x1.png', 'Bon Calso', '2023-11-03', '0elCd0SVG4EueggCWWiIeN'),
 ('Love Me Not', 'https://bing.com/th/id/OIP.W1uvkcrSRQseSdnNfy6PuAHaHa?cb=thvnextc2&rs=1&pid=ImgDetMain', 'Bon Calso', '2022-10-21', '4SjoEMOMjEQCMxuNyFvouz'),
 ('OUTTA MY HEAD', 'https://cdn.themedizine.com/2022/02/Bon-Calso-Outta-My-Head.jpg', 'Bon Calso', '2022-01-28', '1ejsFFhUPkN9zAO3d00wtc'),
@@ -76,4 +76,3 @@ INSERT INTO diego900 (nombre, url, artista, fecha_publicacion, spotify_id) VALUE
 ('Gas Platino', 'https://th.bing.com/th/id/R.45eaba4792a50a25453ab27cdfe84337?rik=NlqRjq5xTasApg&pid=ImgRaw&r=0', 'Diego 900', '2021-12-15', '5WV7JbIdt1jgjbSVConxK3'),
 ('Hypnocil', 'https://bing.com/th/id/OIP.4GYBP_fqbB2xmyFODhjgXgHaHa?cb=thvnextc2&rs=1&pid=ImgDetMain', 'Diego 900', '2020-04-16', '1wJIt5GasVQYOmIlg4IklV'),
 ('El Hotel de Las Luces', 'https://t2.genius.com/unsafe/300x300/https://images.genius.com/a54efe578e5e3700ee2fe4a97cdcf07d.300x300x1.png', 'Diego 900', '2019-03-08', '19ta1CEO2ny3DZje5mgyVy');
-
