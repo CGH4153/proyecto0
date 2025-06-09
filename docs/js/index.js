@@ -1,6 +1,6 @@
 "use strict";
 
-import { musicAPI_auto } from "js/api/_music.js";
+import { musicAPI_auto } from "/js/api/_music.js";
 import { galleryRenderer } from "js/renderers/gallery.js";
 import { messageRenderer } from "js/renderers/messages.js";
 
