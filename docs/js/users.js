@@ -1,6 +1,6 @@
 "use strict";
 
-import {sessionManager} from "/js/utils/session.js";
+import {sessionManager} from "/docs/js/utils/session.js";
 
 function main(){
     showUser();

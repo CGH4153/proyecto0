@@ -1,9 +1,9 @@
 "use strict";
 
-import { sessionManager } from "/js/utils/session.js";
-import { authAPI_auto } from "/js/api/_auth.js";
-import { userValidator } from "/js/validators/usersValidator.js";
-import { messageRenderer } from "/js/renderers/messages.js";
+import { sessionManager } from "/docs/js/utils/session.js";
+import { authAPI_auto } from "/docs/js/api/_auth.js";
+import { userValidator } from "/docs/js/validators/usersValidator.js";
+import { messageRenderer } from "/docs/js/renderers/messages.js";
 
 function main(){
     let registerForm = document.getElementById("form");
