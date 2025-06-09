@@ -1,8 +1,8 @@
 "use strict";
 
-import { musicAPI_auto } from "/docs/js/api/_music.js";
-import { galleryRenderer } from "/docs/js/renderers/gallery.js";
-import { messageRenderer } from "/docs/js/renderers/messages.js";
+import { musicAPI_auto } from "/proyecto0/docs/js/api/_music.js";
+import { galleryRenderer } from "/proyecto0/docs/js/renderers/gallery.js";
+import { messageRenderer } from "/proyecto0/docs/js/renderers/messages.js";
 
 async function main() {
     loadAllPhotos();
