@@ -1,6 +1,6 @@
 "use strict";
 
-import { parseHTML } from "js/utils/parseHTML.js";
+import { parseHTML } from "/js/utils/parseHTML.js";
 
 const params = new URLSearchParams(window.location.search);
 const albumId = params.get("id"); // Este será el ID de Spotify

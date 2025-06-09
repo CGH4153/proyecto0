@@ -1,19 +1,19 @@
 "use strict";
 
-import { parseHTML } from "js/utils/parseHTML.js";
-import { recycledjAPI_auto } from "js/api/_recycledj.js";
-import { dvalentinoAPI_auto } from "js/api/_dvalentino.js";
-import { rusowskyAPI_auto } from "js/api/_rusowsky.js";
-import { lhaineAPI_auto } from "js/api/_lhaine.js";
-import { judelineAPI_auto } from "js/api/_judeline.js";
-import { hokeAPI_auto } from "js/api/_hoke.js";
-import { juicybaeAPI_auto } from "js/api/_juicybae.js";
-import { teolucadamoAPI_auto } from "js/api/_teolucadamo.js";
-import { delaossaAPI_auto } from "js/api/_delaossa.js";
-import { boncalsoAPI_auto } from "js/api/_boncalso.js";
-import { stickymaAPI_auto } from "js/api/_stickyma.js";
-import { diego900API_auto } from "js/api/_diego900.js";
-import { albumRenderer } from "js/renderers/albums.js";
+import { parseHTML } from "/js/utils/parseHTML.js";
+import { recycledjAPI_auto } from "/js/api/_recycledj.js";
+import { dvalentinoAPI_auto } from "/js/api/_dvalentino.js";
+import { rusowskyAPI_auto } from "/js/api/_rusowsky.js";
+import { lhaineAPI_auto } from "/js/api/_lhaine.js";
+import { judelineAPI_auto } from "/js/api/_judeline.js";
+import { hokeAPI_auto } from "/js/api/_hoke.js";
+import { juicybaeAPI_auto } from "/js/api/_juicybae.js";
+import { teolucadamoAPI_auto } from "/js/api/_teolucadamo.js";
+import { delaossaAPI_auto } from "/js/api/_delaossa.js";
+import { boncalsoAPI_auto } from "/js/api/_boncalso.js";
+import { stickymaAPI_auto } from "/js/api/_stickyma.js";
+import { diego900API_auto } from "/js/api/_diego900.js";
+import { albumRenderer } from "/js/renderers/albums.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
     const nombreElem = document.getElementById("artist-name");
