@@ -1,7 +1,7 @@
 "use strict";
 
 import { musicAPI_auto } from "/proyecto0/js/api/_music.js";
-import { galleryRenderer } from "js/renderers/gallery.js";
+import { galleryRenderer } from "/proyecto0/js/renderers/gallery.js";
 import { messageRenderer } from "js/renderers/messages.js";
 
 async function main() {
