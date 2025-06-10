@@ -2,7 +2,7 @@
 
 import { musicAPI_auto } from "/proyecto0/js/api/_music.js";
 import { galleryRenderer } from "./renderers/gallery.js";
-import { messageRenderer } from "js/renderers/messages.js";
+import { messageRenderer } from "./renderers/messages.js";
 
 async function main() {
     loadAllPhotos();
