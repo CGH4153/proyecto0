@@ -3,9 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tienda</title>
+
+    
+    <script src="js/utils/include.js"></script>
+
+    <!-- Agregamos el css style-->
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!--Importamos Bootstrap -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script src="/js/libs/bootstrap.min.js"></script>
+
+    <script type="module" src="js/users.js"></script>
+
+    <script src="js/libs/axios.min.js"></script>
 </head>
 <body>
+    <div id="header"></div>
+    <div id="errors"></div>
+
+    <div class="container">
+        <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>John</td>
+                <td>Doe</td>
+                <td>@social</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     
+    <div id="footer"></div>
+
+    
+    <script>
+        include("header.html", "#header");
+    </script>
+
+    <script>
+        include("footer.html", "#footer");
+    </script>
 </body>
 </html>

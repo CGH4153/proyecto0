@@ -1,17 +1,6 @@
 DROP TABLE IF EXISTS Users;
-DROP TABLE IF EXISTS Music;
-DROP TABLE IF EXISTS Recycledj;
-DROP TABLE IF EXISTS Dvalentino;
-DROP TABLE IF EXISTS Rusowsky;
-DROP TABLE IF EXISTS Lhaine;
-DROP TABLE IF EXISTS Judeline;
-DROP TABLE IF EXISTS Hoke;
-DROP TABLE IF EXISTS Juicybae;
-DROP TABLE IF EXISTS Teolucadamo;
-DROP TABLE IF EXISTS Delaossa;
-DROP TABLE IF EXISTS Boncalso;
-DROP TABLE IF EXISTS Stickyma;
-DROP TABLE IF EXISTS Diego900;
+DROP TABLE IF EXISTS Artists;
+DROP TABLE IF EXISTS Album;
 
 CREATE TABLE Users (
   userId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -22,118 +11,37 @@ CREATE TABLE Users (
   username VARCHAR(256) UNIQUE NOT NULL
 );
 
-CREATE TABLE Music (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL
+CREATE TABLE Artists (
+	artistId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	avatarUrl VARCHAR(512) NOT NULL
 );
 
-CREATE TABLE Recycledj (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
+CREATE TABLE Album (
+	albumId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(100) NOT NULL,
+	url VARCHAR(512) NOT NULL,
+	fecha_publicacion DATE NOT NULL,
+	spotify_id VARCHAR(255) NOT NULL,
+	destacado BOOLEAN NOT NULL,
+	artistaId INT NOT NULL,
+	FOREIGN KEY (artistaId) REFERENCES Artists(artistId)
 );
 
-CREATE TABLE Dvalentino (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
+CREATE OR REPLACE VIEW AlbumsWithArtists AS
+SELECT 
+	m.nombre AS nombre_album,
+	m.fecha_publicacion AS fecha_publicacion,
+	m.spotify_id AS spotify_id,
+	a.nombre AS nombre_artista,
+	m.url AS url_photo,
+	m.destacado AS destacado,
+	a.avatarUrl AS url_avatar
+FROM 
+	Album m
+JOIN
+	Artists a ON m.artistaId = a.artistId
+GROUP BY nombre_album, url_photo, fecha_publicacion, spotify_id, nombre_artista, url_avatar, destacado
+ORDER BY m.artistaId ASC;
 
-CREATE TABLE Rusowsky (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Lhaine (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Judeline (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Hoke (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Juicybae (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Teolucadamo (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Delaossa (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Boncalso (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Stickyma (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE Diego900 (
-  musicId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  url VARCHAR(255) NOT NULL,
-  artista VARCHAR(100) NOT NULL,
-  fecha_publicacion DATE NOT NULL,
-  spotify_id VARCHAR(255) NOT NULL
-);
+SELECT * FROM AlbumsWithArtists;
