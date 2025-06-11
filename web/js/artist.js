@@ -1,18 +1,7 @@
 "use strict";
 
 import { parseHTML } from "/js/utils/parseHTML.js";
-import { recycledjAPI_auto } from "/js/api/_recycledj.js";
-import { dvalentinoAPI_auto } from "/js/api/_dvalentino.js";
-import { rusowskyAPI_auto } from "/js/api/_rusowsky.js";
-import { lhaineAPI_auto } from "/js/api/_lhaine.js";
-import { judelineAPI_auto } from "/js/api/_judeline.js";
-import { hokeAPI_auto } from "/js/api/_hoke.js";
-import { juicybaeAPI_auto } from "/js/api/_juicybae.js";
-import { teolucadamoAPI_auto } from "/js/api/_teolucadamo.js";
-import { delaossaAPI_auto } from "/js/api/_delaossa.js";
-import { boncalsoAPI_auto } from "/js/api/_boncalso.js";
-import { stickymaAPI_auto } from "/js/api/_stickyma.js";
-import { diego900API_auto } from "/js/api/_diego900.js";
+import { albumswithartistsAPI_auto } from "/js/api/_albumswithartists.js";
 import { albumRenderer } from "/js/renderers/albums.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -36,9 +25,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await recycledjAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
+            
         }
 
         if(artistName == "D.Valentino"){
@@ -49,8 +40,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await dvalentinoAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -64,8 +56,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await rusowskyAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -79,8 +72,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await lhaineAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -96,8 +90,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await judelineAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -113,8 +108,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await hokeAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -132,8 +128,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await juicybaeAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -149,8 +146,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await teolucadamoAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -162,8 +160,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await delaossaAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -175,8 +174,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await boncalsoAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -192,8 +192,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await stickymaAPI_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
 
@@ -211,11 +212,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             let info = parseHTML(html);
             document.getElementById("artist-info").appendChild(info);
             let galleryContainer = document.querySelector("div.container");
-            let photos = await diego900API_auto.getAll();
-            let cardGallery = albumRenderer.asCardGallery(photos);
+            let photos = await albumswithartistsAPI_auto.getAll();
+            let albums = photos.filter(photo => photo.nombre_artista === artistName);
+            let cardGallery = albumRenderer.asCardGallery(albums);
             galleryContainer.appendChild(cardGallery);
         }
-            }
+    }
 });
 
 

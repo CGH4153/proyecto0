@@ -7,10 +7,10 @@
 
 ### Auxiliary query
 ### Positive test
-### Test 00: Get all existing recycledj
+### Test 00: Get all existing album
 ### This query is used in several of the below tests it should be executed first.
-# @name recycledj
-GET {{BASE}}/recycledj
+# @name album
+GET {{BASE}}/album
 
 ### Login a(n) users and save the generated token 
 ### This token is used in several of the below tests it should be executed second.
@@ -29,119 +29,124 @@ Content-Type: application/json
 
 ### TESTS BEGIN
 
-### Test 01: Get one existing recycledj by its id.
+### Test 01: Get one existing album by its id.
 ### positive test 
-@recId = {{recycledj.response.body.0.musicId}}
-GET {{BASE}}/recycledj/{{recId}} 
+@albId = {{album.response.body.0.albumId}}
+GET {{BASE}}/album/{{albId}} 
 Content-Type: application/json 
 
 
-### Test 02: Try get one existing recycledj by its nonexistent id.
+### Test 02: Try get one existing album by its nonexistent id.
 ### negative test 
-GET {{BASE}}/recycledj/999999999
+GET {{BASE}}/album/999999999
 Content-Type: application/json 
 
 
-### Test 03: Add a new recycledj successfully
+### Test 03: Add a new album successfully
 ### Positive test 
 ### We assume that the token has been aquired by the login request.
-# @name newrecycledj
-POST {{BASE}}/recycledj 
+# @name newalbum
+POST {{BASE}}/album 
 Content-Type: application/json 
 Token: {{token}} 
 
 {
 	"nombre": ###REPLACE###,
 	"url": ###REPLACE###,
-	"artista": ###REPLACE###,
 	"fecha_publicacion": ###REPLACE###,
-	"spotify_id": ###REPLACE###
+	"spotify_id": ###REPLACE###,
+	"destacado": ###REPLACE###,
+	"artistaId": ###REPLACE###
 } 
 
-### Check the created recycledj
+### Check the created album
 
-@newrecycledjid = {{newrecycledj.response.body.lastId}}
-GET {{BASE}}/recycledj/{{newrecycledjid}}
+@newalbumid = {{newalbum.response.body.lastId}}
+GET {{BASE}}/album/{{newalbumid}}
 Content-Type: application/json 
 
-### Test 04: Add a new recycledj without a session token
+### Test 04: Add a new album without a session token
 ### Negative test 
-POST {{BASE}}/recycledj 
+POST {{BASE}}/album 
 Content-Type: application/json 
 
 { 
 	"nombre": ###REPLACE###,
 	"url": ###REPLACE###,
-	"artista": ###REPLACE###,
 	"fecha_publicacion": ###REPLACE###,
-	"spotify_id": ###REPLACE###
+	"spotify_id": ###REPLACE###,
+	"destacado": ###REPLACE###,
+	"artistaId": ###REPLACE###
 }
 
-### Test 05: Modify an existing recycledj 
+### Test 05: Modify an existing album 
 ### Positive test 
-@recId = {{recycledj.response.body.0.musicId}} 
-PUT {{BASE}}/recycledj/{{recId}} 
+@albId = {{album.response.body.0.albumId}} 
+PUT {{BASE}}/album/{{albId}} 
 Content-Type: application/json 
 Token: {{token}} 
 
 { 
 	"nombre": ###REPLACE###,
 	"url": ###REPLACE###,
-	"artista": ###REPLACE###,
 	"fecha_publicacion": ###REPLACE###,
-	"spotify_id": ###REPLACE###
+	"spotify_id": ###REPLACE###,
+	"destacado": ###REPLACE###,
+	"artistaId": ###REPLACE###
 }
 
-### Check the modified recycledj
+### Check the modified album
 
-GET {{BASE}}/recycledj/{{newrecycledjid}}
+GET {{BASE}}/album/{{newalbumid}}
 Content-Type: application/json 
 
-### Test 06: Try to modify an existing recycledj without a session token
+### Test 06: Try to modify an existing album without a session token
 ### Negative test
-@recId = {{recycledj.response.body.0.musicId}}
-PUT {{BASE}}/recycledj/{{recId}}
+@albId = {{album.response.body.0.albumId}}
+PUT {{BASE}}/album/{{albId}}
 Content-Type: application/json
 
 {
 	"nombre": ###REPLACE###,
 	"url": ###REPLACE###,
-	"artista": ###REPLACE###,
 	"fecha_publicacion": ###REPLACE###,
-	"spotify_id": ###REPLACE###
+	"spotify_id": ###REPLACE###,
+	"destacado": ###REPLACE###,
+	"artistaId": ###REPLACE###
 }
 
-### Test 07: Delete an existing recycledj
+### Test 07: Delete an existing album
 ### Positive test
 
-### Create a new recycledj, which we will delete
-# @name createdrecToDelete
-POST {{BASE}}/recycledj
+### Create a new album, which we will delete
+# @name createdalbToDelete
+POST {{BASE}}/album
 Content-Type: application/json
 Token: {{token}}
 
 {
 	"nombre": ###REPLACE###,
 	"url": ###REPLACE###,
-	"artista": ###REPLACE###,
 	"fecha_publicacion": ###REPLACE###,
-	"spotify_id": ###REPLACE###
+	"spotify_id": ###REPLACE###,
+	"destacado": ###REPLACE###,
+	"artistaId": ###REPLACE###
 }
 
-### Check the created recycledj
-@recdelId = {{createdrecToDelete.response.body.lastId}}
-GET {{BASE}}/recycledj/{{recdelId}}
+### Check the created album
+@albdelId = {{createdalbToDelete.response.body.lastId}}
+GET {{BASE}}/album/{{albdelId}}
 Content-Type: application/json 
 
-### Delete the recycledj
-DELETE {{BASE}}/recycledj/{{recdelId}}
+### Delete the album
+DELETE {{BASE}}/album/{{albdelId}}
 Token: {{token}}
 
-### Check the deleted recycledj
-GET {{BASE}}/recycledj/{{recdelId}}
+### Check the deleted album
+GET {{BASE}}/album/{{albdelId}}
 Content-Type: application/json 
 
-### Test 08: Try to delete a recycledj without a session token
+### Test 08: Try to delete a album without a session token
 ### Negative test
-DELETE {{BASE}}/recycledj/{{recId}}
+DELETE {{BASE}}/album/{{albId}}
 

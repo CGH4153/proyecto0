@@ -94,6 +94,19 @@ a.card-artist {
     text-decoration: none; /* Quita el subrayado */
 }
 
+img.avatar {
+    object-fit: cover; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+img.card-img-top {
+    object-fit: cover; 
+    width: 414px;
+    height: 414px;
+}
+
 p.card-date {
     font-style: italic;
     text-align: right;

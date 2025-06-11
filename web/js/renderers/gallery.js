@@ -10,14 +10,17 @@ const galleryRenderer = {
 
         let counter = 0;
         for (let photo of photos) {
-            let card = photoRenderer.asCard(photo);
-            row.appendChild(card);
-            counter += 1;
-            
-            if (counter % 3 === 0) {
-                row = parseHTML('<div class="row"></div>');
-                galleryContainer.appendChild(row);
+            if(photo.destacado == 1){
+                let card = photoRenderer.asCard(photo);
+                row.appendChild(card);
+                counter += 1;
+                
+                if (counter % 3 === 0) {
+                    row = parseHTML('<div class="row"></div>');
+                    galleryContainer.appendChild(row);
+                }
             }
+            
         }
         return galleryContainer;
     }

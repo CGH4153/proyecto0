@@ -1,0 +1,68 @@
+{
+    "getAll": {
+        "description": "Gets all entries from 'album'",
+        "route": "/album",
+        "method": "GET",
+        "sql": "SELECT * FROM album",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "getById": {
+        "description": "Gets an entry from 'album' by its primary key",
+        "route": "/album/$albumId",
+        "method": "GET",
+        "sql": "SELECT * FROM album WHERE albumId = $albumId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "create": {
+        "description": "Creates a new entry in 'album'",
+        "route": "/album",
+        "method": "POST",
+        "sql": "INSERT INTO album (nombre, url, fecha_publicacion, spotify_id, destacado, artistaId) VALUES ($nombre, $url, $fecha_publicacion, $spotify_id, $destacado, $artistaId)",
+        "request_body_params": [
+            "nombre",
+            "url",
+            "fecha_publicacion",
+            "spotify_id",
+            "destacado",
+            "artistaId"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "update": {
+        "description": "Updates an existing entry in 'album' by its primary key",
+        "route": "/album/$albumId",
+        "method": "PUT",
+        "sql": "UPDATE album SET nombre = $nombre, url = $url, fecha_publicacion = $fecha_publicacion, spotify_id = $spotify_id, destacado = $destacado, artistaId = $artistaId WHERE albumId = $albumId",
+        "request_body_params": [
+            "nombre",
+            "url",
+            "fecha_publicacion",
+            "spotify_id",
+            "destacado",
+            "artistaId"
+        ],
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    },
+    "delete": {
+        "description": "Deletes an existing entry in 'album' by its primary key",
+        "route": "/album/$albumId",
+        "method": "DELETE",
+        "sql": "DELETE FROM album WHERE albumId = $albumId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ]
+    }
+}

@@ -42,6 +42,4 @@ FROM
 JOIN
 	Artists a ON m.artistaId = a.artistId
 GROUP BY nombre_album, url_photo, fecha_publicacion, spotify_id, nombre_artista, url_avatar, destacado
-ORDER BY m.artistaId ASC;
-
-SELECT * FROM AlbumsWithArtists;
+ORDER BY m.fecha_publicacion DESC;

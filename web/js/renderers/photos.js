@@ -9,10 +9,13 @@ asCard: function(photo) {
 
     let html = `<div class="col-md-4">
     <div class="card">
-    <img src="${photo.url}" class="card-img-top">
+    <img src="${photo.url_photo}" class="card-img-top">
     <div class="card-body">
-    <h5 class="card-title" id="card-title">${photo.nombre}</h5>
-    <a class="card-artist" href="artist.html?name=${encodeURIComponent(photo.artista)}"> ${photo.artista}</a>
+    <h5 class="card-title" id="card-title">${photo.nombre_album}</h5>
+    <div class="card-artist">
+    <img src="${photo.url_avatar}" class="avatar">
+    <a class="card-artist" href="artist.html?name=${encodeURIComponent(photo.nombre_artista)}"> ${photo.nombre_artista}</a>
+    </div>
     <p class="card-date">${fechaFormateada}</p>
     </div>
     </div>
@@ -28,11 +31,11 @@ asAlbum: function(photo) {
     let html = `<div class="col-md-4">
     <div class="card">
     <a class="card-photo" href="album.html?id=${photo.spotify_id}">
-    <img src="${photo.url}" class="card-img-top">
+    <img src="${photo.url_photo}" class="card-img-top">
     </a>
     <div class="card-body">
-    <p class="card-title">${photo.nombre}</p>
-    <p class="card-artist"> ${photo.artista}</p>
+    <p class="card-title">${photo.nombre_album}</p>
+    <p class="card-artist"> ${photo.nombre_artista}</p>
     <p class="card-date">${fechaFormateada}</p>
     </div>
     </div>
