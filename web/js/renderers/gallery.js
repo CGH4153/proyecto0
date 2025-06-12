@@ -23,6 +23,22 @@ const galleryRenderer = {
             
         }
         return galleryContainer;
+    },
+
+    asCardShop: function(photos) {
+        let galleryContainer = document.getElementById("photo-gallery");
+        let row = parseHTML('<div id="elemento" class="row m-3 border border-dark rounded"></div>');
+        galleryContainer.appendChild(row);
+
+        let counter = 0;
+        for (let photo of photos) {
+            let card = photoRenderer.asShop(photo);
+            row.appendChild(card);
+            row = parseHTML('<div id="elemento" class="row m-3 border border-dark rounded"></div>');
+            galleryContainer.appendChild(row);
+        }
+
+        return galleryContainer;
     }
 };
 

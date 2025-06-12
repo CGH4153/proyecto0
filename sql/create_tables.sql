@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Artists;
 DROP TABLE IF EXISTS Album;
+DROP TABLE IF EXISTS Shop;
 
 CREATE TABLE Users (
   userId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -30,6 +31,7 @@ CREATE TABLE Album (
 
 CREATE OR REPLACE VIEW AlbumsWithArtists AS
 SELECT 
+	m.albumId AS id
 	m.nombre AS nombre_album,
 	m.fecha_publicacion AS fecha_publicacion,
 	m.spotify_id AS spotify_id,
@@ -41,5 +43,15 @@ FROM
 	Album m
 JOIN
 	Artists a ON m.artistaId = a.artistId
-GROUP BY nombre_album, url_photo, fecha_publicacion, spotify_id, nombre_artista, url_avatar, destacado
+GROUP BY id, nombre_album, url_photo, fecha_publicacion, spotify_id, nombre_artista, url_avatar, destacado
 ORDER BY m.fecha_publicacion DESC;
+
+CREATE TABLE Shop (
+	elementoId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	nombre VARCHAR(512) NOT NULL,
+	url_photo VARCHAR(512) NOT NULL,
+	descripcion VARCHAR(1500) NOT NULL,
+	stock BOOLEAN NOT NULL,
+	artistaId INT NOT NULL,
+	FOREIGN KEY (artistaId) REFERENCES Artists(artistId)
+)
